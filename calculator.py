@@ -13,12 +13,16 @@ class Calculator:
 
     def divide(self, a, b):
         result = 0
+        if b == 0:
+            raise ZeroDivisionError("Division by zero is undefined.")
         while a >= b: # a > b
             a = self.subtract(a, b)
             result += 1
         return result
     
     def modulo(self, a, b):
+        if b == 0:
+            raise ZeroDivisionError("Modulo by zero is undefined.")
         while a >= b: # a <= b
             a = a-b
         return a
